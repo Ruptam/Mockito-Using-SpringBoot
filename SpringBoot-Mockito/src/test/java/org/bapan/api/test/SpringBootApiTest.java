@@ -14,8 +14,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -25,6 +27,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringBootApiTest {
+	/**
+	 * 
+	 */
+	/*@LocalServerPort
+	int randomServerPort;*/
 	/**
 	 * 
 	 */
@@ -48,22 +55,48 @@ public class SpringBootApiTest {
 	@Test
 	public void getUserByAddress() {
 		String address = "Hindmotor";
-		UserEntity testUser = new UserEntity(56,"James","Hindmotor",34);
+		UserEntity testUser = new UserEntity();//56,"James","Hindmotor",34
+		testUser.setUserId(56);
+		testUser.setName("James");
+		testUser.setAge(34);
+		testUser.setAddress("Hindmotor");
 		Mockito.when(userRepository.findByAddress(address)).thenReturn(testUser);
-		Assert.assertEquals(testUser, userRepository.findByAddress(address));
+		Assert.assertEquals(testUser, userService.getUserByAddress(address));
+		testUser.getAddress();
+		testUser.getAge();
+		testUser.getName();
+		testUser.getUserId();
 	}
 
 	@Test
 	public void saveUser() {
 		UserEntity testUser = new UserEntity(56,"James","Hindmotor",34); 
 		Mockito.when(userRepository.save(testUser)).thenReturn(testUser);
-		Assert.assertEquals(testUser, userRepository.save(testUser));
+		Assert.assertEquals(testUser, userService.saveUser(testUser));
 	}
 	
 	@Test
 	public void deleteUser() {
-		UserEntity testUser = new UserEntity(56,"James","Hindmotor",34);
-		userService.deleteUser(56);
+		userService.deleteUser("56");
 		Mockito.verify(userRepository,Mockito.times(1)).deleteByUserId(56);
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testDeleteUserByNullId() {
+		userService.deleteUser(null);
+	}
+	
+	@Test
+	public void testDeleteUserByAlphaId() {
+		userService.deleteUser("A");
+	}
+	
+	/*@Test
+	public void applicationContextLoaded() {
+	}
+	
+	@Test
+	public void testMainMethodOfApp() throws Exception {
+		SpringApplication.main(new String[] {});
+	}*/
 }

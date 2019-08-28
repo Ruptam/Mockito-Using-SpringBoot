@@ -36,8 +36,17 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void deleteUser(int id) {
-		userRepository.deleteByUserId(id);
+	public void deleteUser(String id) {
+		if(id == null) {
+			throw new IllegalArgumentException("id cannot be null");
+		}
+		try {
+			int userId = Integer.parseInt(id);
+			userRepository.deleteByUserId(userId);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }
