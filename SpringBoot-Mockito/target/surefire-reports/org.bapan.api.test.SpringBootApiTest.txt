@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.bapan.api.test.SpringBootApiTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.788 s - in org.bapan.api.test.SpringBootApiTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.765 s - in org.bapan.api.test.SpringBootApiTest

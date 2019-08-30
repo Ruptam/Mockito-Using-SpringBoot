@@ -1,1 +1,3 @@
+org\bapan\api\test\SpringBootApiTest$UserServiceImplTestConfiguration.class
 org\bapan\api\test\SpringBootApiTest.class
+org\bapan\api\main\test\MainMethodTest.class

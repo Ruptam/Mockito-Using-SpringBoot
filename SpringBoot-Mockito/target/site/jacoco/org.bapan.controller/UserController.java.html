@@ -35,8 +35,8 @@ import org.springframework.web.bind.annotation.RestController;
 	 */
 	@RequestMapping(value=&quot;/save&quot;,method=RequestMethod.POST)
 	public ResponseEntity&lt;UserEntity&gt; saveUser(@RequestBody UserEntity userEntity) {
-<span class="nc" id="L38">		UserEntity savedUser = userService.saveUser(userEntity);</span>
-<span class="nc" id="L39">		return new ResponseEntity&lt;UserEntity&gt;(savedUser,HttpStatus.OK);</span>
+<span class="fc" id="L38">		UserEntity savedUser = userService.saveUser(userEntity);</span>
+<span class="fc" id="L39">		return new ResponseEntity&lt;UserEntity&gt;(savedUser,HttpStatus.OK);</span>
 	}
 	/**
 	 * 
@@ -44,17 +44,17 @@ import org.springframework.web.bind.annotation.RestController;
 	 */
 	@GetMapping(value=&quot;/allUsers&quot;)
 	public ResponseEntity&lt;List&lt;UserEntity&gt;&gt; getAllUsers() {
-<span class="nc" id="L47">		return new ResponseEntity&lt;List&lt;UserEntity&gt;&gt;(userService.getAllUsers(),HttpStatus.OK);</span>
+<span class="fc" id="L47">		return new ResponseEntity&lt;List&lt;UserEntity&gt;&gt;(userService.getAllUsers(),HttpStatus.OK);</span>
 	}
 	
 	@GetMapping(value=&quot;/byAddress/{addr}&quot;)
 	public ResponseEntity&lt;UserEntity&gt; getUserByAddress(@PathVariable(&quot;addr&quot;) String address) {
-<span class="nc" id="L52">		return new ResponseEntity&lt;UserEntity&gt;(userService.getUserByAddress(address),HttpStatus.OK);</span>
+<span class="fc" id="L52">		return new ResponseEntity&lt;UserEntity&gt;(userService.getUserByAddress(address),HttpStatus.OK);</span>
 	}
 	
 	@RequestMapping(value=&quot;/user/{uid}&quot;,method=RequestMethod.DELETE)
 	public void deleteUser(@PathVariable(&quot;uid&quot;) String id) {
-<span class="nc" id="L57">		userService.deleteUser(id);</span>
-<span class="nc" id="L58">	}</span>
+<span class="fc" id="L57">		userService.deleteUser(id);</span>
+<span class="fc" id="L58">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

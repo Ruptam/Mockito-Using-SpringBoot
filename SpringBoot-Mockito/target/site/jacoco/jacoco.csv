@@ -1,5 +1,5 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 SpringBoot-Mockito,org.bapan.service,UserServiceImpl,0,37,0,2,0,12,0,6,0,5
 SpringBoot-Mockito,org.bapan.entity,UserEntity,0,46,0,0,0,20,0,10,0,10
-SpringBoot-Mockito,org.bapan,MockitoDemo,5,3,0,0,2,1,1,1,1,1
-SpringBoot-Mockito,org.bapan.controller,UserController,33,3,0,0,6,1,4,1,4,1
+SpringBoot-Mockito,org.bapan,MockitoDemo,0,8,0,0,0,3,0,2,0,2
+SpringBoot-Mockito,org.bapan.controller,UserController,0,36,0,0,0,7,0,5,0,5
